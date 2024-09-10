@@ -115,6 +115,9 @@ The Task Management API provides endpoints for managing **Authors**, **Tasks**, 
 
 You can find the Postman documentation and collection in the `postman` directory, or import the provided Postman collection file for easy testing of the API endpoints.
 
+[Postman Documentation](https://documenter.getpostman.com/view/38188646/2sAXjT1p8a)
+
+
 ---
 
 ## Project Structure
@@ -147,5 +150,10 @@ taskmanagement
 
 ## Development Notes
 
-- This project uses `bun` and `gorm` for database operations. For filtering and validation, `gookit` is used.
+- This project uses `bun`, `gorm` for database operations. For filtering and validation, `gookit` is used. For configuration `toml` is used.
+
 - To manually interact with the SQLite database, you can use the SQLite CLI or your preferred SQLite database client.
+
+- Added launch configuration for the VScode to easily run or debug the program.
+
+- config/config.toml this file is used to store application configuration settings and can be added to gitignore and copy   can be made like config_sample with all variable blank. To preserve the secert of configuration of production. 
