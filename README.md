@@ -78,6 +78,9 @@ The Task Management API provides endpoints for managing **Authors**, **Tasks**, 
 - **Get All Tasks**  
   `GET` - `localhost:{port}/tasks`
 
+ - **Get All Tasks Associated to Author**  
+  `GET` - `localhost:{port}/tasks/{authorID}/task` 
+
 - **Get Task by ID**  
   `GET` - `localhost:{port}/tasks/{taskID}`
 

@@ -31,6 +31,7 @@ func taskRoutes() http.Handler {
 
 	// Tasks Routes
 	tr.Handle("GET /tasks", http.HandlerFunc(controllers.GetAllTasks))
+	tr.Handle("GET /tasks/{authorId}/task", http.HandlerFunc(controllers.GetTasksByAuthorID))
 	tr.Handle("GET /tasks/{taskId}", http.HandlerFunc(controllers.GetTasksByID))
 	tr.Handle("POST /tasks", http.HandlerFunc(controllers.AddTasks))
 	tr.Handle("PUT /tasks/{taskId}", http.HandlerFunc(controllers.UpdateTasksByID))

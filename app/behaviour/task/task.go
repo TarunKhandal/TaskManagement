@@ -24,6 +24,14 @@ func (r *TaskRepository) GetAllTask() ([]repoTask.Task, int, error) {
 	return resSet, cnt, nil
 }
 
+func (r *TaskRepository) GetTaskByAuthorId(id int) ([]repoTask.Task, int, error) {
+	resSet, cnt, err := repoTask.GetAllTaskByAuthorID(r.ctx, id)
+	if err != nil {
+		return nil, 0, err
+	}
+	return resSet, cnt, nil
+}
+
 func (r *TaskRepository) GetTask(id int) (*repoTask.Task, error) {
 	resSet, err := repoTask.GetTask(r.ctx, id)
 	if err != nil {

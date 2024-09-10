@@ -31,6 +31,35 @@ func GetAllTasks(res http.ResponseWriter, req *http.Request) {
 
 }
 
+func GetTasksByAuthorID(res http.ResponseWriter, req *http.Request) {
+	id, err := strconv.Atoi(req.PathValue("authorId"))
+	if err != nil || id == 0 {
+		responses.ApiResponseGivenMsg(res, http.StatusBadRequest, "Id not provided", nil, err.Error())
+		return
+	}
+
+	if id <= 0 {
+		responses.ApiResponseGivenMsg(res, http.StatusBadRequest, "Valid Id needed", nil, errors.New("ID provided is not valid").Error())
+		return
+	}
+
+	objs, cnt, err := behaviourTask.NewTaskRepository().GetTaskByAuthorId(id)
+	if err != nil {
+		responses.ApiResponseGivenMsg(res, http.StatusNotFound, "Data requested is not avaliable", nil, err.Error())
+		return
+	}
+
+	if cnt == 0 {
+		responses.ApiResponseGivenMsg(res, http.StatusNotFound, "Data requested is not avaliable", map[string]interface{}{
+			"tasks": objs, "count": cnt}, nil)
+		return
+	}
+
+	responses.ApiResponseGivenMsg(res, http.StatusOK, "Data requested is successfully fetched", map[string]interface{}{
+		"tasks": objs, "count": cnt}, nil)
+
+}
+
 func GetTasksByID(res http.ResponseWriter, req *http.Request) {
 	id, err := strconv.Atoi(req.PathValue("taskId"))
 	if err != nil || id == 0 {

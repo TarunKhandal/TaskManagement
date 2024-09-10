@@ -1,0 +1,1123 @@
+{
+	"info": {
+		"_postman_id": "85eb6e2b-96b5-4ea2-b308-6b2c0f6d8af8",
+		"name": "Task Management",
+		"description": "A service to manage tasks and steps of the tasks made by the author.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38188646"
+	},
+	"item": [
+		{
+			"name": "Authors",
+			"item": [
+				{
+					"name": "Add a new author",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"first_name\": \"Author\",\r\n    \"last_name\": \"first\",\r\n    \"username\": \"author_1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/author",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"author"
+							]
+						},
+						"description": "This endpoint add a new author in the database."
+					},
+					"response": [
+						{
+							"name": "Add a new author",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n    \"first_name\": \"Author\",\r\n    \"last_name\": \"first\",\r\n    \"username\": \"author_1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5520/author",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5520",
+									"path": [
+										"author"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Sep 2024 17:27:11 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"authorId\": 1\n    },\n    \"error\": null,\n    \"message\": \"Data successfully added \"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get author by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/author/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"author",
+								"1"
+							]
+						},
+						"description": "This endpoint get the author details by the author id"
+					},
+					"response": [
+						{
+							"name": "Get author by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5520/author/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5520",
+									"path": [
+										"author",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Sep 2024 17:27:51 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"first_name\": \"Author\",\n        \"last_name\": \"First\",\n        \"username\": \"author_1\"\n    },\n    \"error\": null,\n    \"message\": \"Data requested is successfully fetched\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update author",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\" :\"author jack\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/author/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"author",
+								"1"
+							]
+						},
+						"description": "Update the author fields (first name, last name)"
+					},
+					"response": [
+						{
+							"name": "Update author",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\" :\"author jack\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5520/author/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5520",
+									"path": [
+										"author",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Sep 2024 17:30:02 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"error\": null,\n    \"message\": \"Data successfully added \"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete author",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/author/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"author",
+								"1"
+							]
+						},
+						"description": "delete the author by id"
+					},
+					"response": [
+						{
+							"name": "Delete author",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5520/author/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5520",
+									"path": [
+										"author",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Sep 2024 15:47:22 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"error\": null,\n    \"message\": \"Data successfully deleted \"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Author",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/author",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"author"
+							]
+						},
+						"description": "get all the authors"
+					},
+					"response": [
+						{
+							"name": "Get All Author",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5520/author",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5520",
+									"path": [
+										"author"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Sep 2024 17:30:20 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "174"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"authors\": [\n            {\n                \"id\": 1,\n                \"first_name\": \"Author Jack\",\n                \"last_name\": \"First\",\n                \"username\": \"author_1\"\n            }\n        ],\n        \"count\": 1\n    },\n    \"error\": null,\n    \"message\": \"Data requested is successfully fetched\"\n}"
+						}
+					]
+				}
+			],
+			"description": "This folder contains api's related to authors"
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Add a new task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Book Publish\",\r\n    \"description\": \"Book publish task\",\r\n    \"author_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/tasks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tasks"
+							]
+						},
+						"description": "This endpoint add a new task in the database."
+					},
+					"response": [
+						{
+							"name": "Add a new task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Tarun\",\r\n    \"decription\": \"khandal\",\r\n    \"author_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5520/tasks",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5520",
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Sep 2024 16:56:07 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"taskId\": 1\n    },\n    \"error\": null,\n    \"message\": \"Data successfully added \"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get task by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tasks/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tasks",
+								"1"
+							]
+						},
+						"description": "This endpoint get the task details by the task id"
+					},
+					"response": [
+						{
+							"name": "Get task by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5520/tasks/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5520",
+									"path": [
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Sep 2024 16:58:35 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "134"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Tarun\",\n        \"description\": \"khandal\",\n        \"author_id\": 1\n    },\n    \"error\": null,\n    \"message\": \"Data requested is successfully fetched\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all task by author id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tasks/3/task",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tasks",
+								"3",
+								"task"
+							]
+						},
+						"description": "This endpoint get the task details by the author id"
+					},
+					"response": [
+						{
+							"name": "Get all task by author id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5520/tasks/3/task",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5520",
+									"path": [
+										"tasks",
+										"3",
+										"task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Sep 2024 17:56:36 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "489"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"count\": 5,\n        \"tasks\": [\n            {\n                \"id\": 4,\n                \"name\": \"Book Publish\",\n                \"description\": \"Book publish task\",\n                \"author_id\": 3\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Book Publish\",\n                \"description\": \"Book publish task\",\n                \"author_id\": 3\n            },\n            {\n                \"id\": 6,\n                \"name\": \"Book Publish\",\n                \"description\": \"Book publish task\",\n                \"author_id\": 3\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Book Publish\",\n                \"description\": \"Book publish task\",\n                \"author_id\": 3\n            },\n            {\n                \"id\": 8,\n                \"name\": \"Book Publish\",\n                \"description\": \"Book publish task\",\n                \"author_id\": 3\n            }\n        ]\n    },\n    \"error\": null,\n    \"message\": \"Data requested is successfully fetched\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update task",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"name\": \"book\",\r\n    \"description\": \"binding\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/tasks/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tasks",
+								"2"
+							]
+						},
+						"description": "update the task details like name and description"
+					},
+					"response": [
+						{
+							"name": "Update task",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n    \"name\": \"book\",\r\n    \"description\": \"binding\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5520/tasks/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5520",
+									"path": [
+										"tasks",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Sep 2024 17:34:27 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"error\": null,\n    \"message\": \"Data successfully added \"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete task",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tasks/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tasks",
+								"3"
+							]
+						},
+						"description": "delete the task by id"
+					},
+					"response": [
+						{
+							"name": "Delete task",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5520/tasks/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5520",
+									"path": [
+										"tasks",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Sep 2024 15:47:22 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"error\": null,\n    \"message\": \"Data successfully deleted \"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All task",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tasks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tasks"
+							]
+						},
+						"description": "get all the task"
+					},
+					"response": [
+						{
+							"name": "Get All task",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5520/tasks",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5520",
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Sep 2024 17:33:05 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "331"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"count\": 3,\n        \"tasks\": [\n            {\n                \"id\": 1,\n                \"name\": \"Book Publish\",\n                \"description\": \"Book publish task\",\n                \"author_id\": 2\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Book Publish\",\n                \"description\": \"Book publish task\",\n                \"author_id\": 2\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Book Publish\",\n                \"description\": \"Book publish task\",\n                \"author_id\": 2\n            }\n        ]\n    },\n    \"error\": null,\n    \"message\": \"Data requested is successfully fetched\"\n}"
+						}
+					]
+				}
+			],
+			"description": "This folder contains api's related to task"
+		},
+		{
+			"name": "Steps",
+			"item": [
+				{
+					"name": "Add a new Step",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"step\":\"documents checking\",\r\n    \"completed\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/tasks/2/steps",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tasks",
+								"2",
+								"steps"
+							]
+						},
+						"description": "This endpoint add a new step in the database."
+					},
+					"response": [
+						{
+							"name": "Add a new Step",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"task_id\": 1,\r\n    \"step\":\"documents checking\",\r\n    \"completed\":false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5520/tasks/1/steps",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5520",
+									"path": [
+										"tasks",
+										"1",
+										"steps"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Sep 2024 17:42:08 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"StepsId\": 0\n    },\n    \"error\": null,\n    \"message\": \"Data successfully added \"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get step by task id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tasks/2/steps",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tasks",
+								"2",
+								"steps"
+							]
+						},
+						"description": "This endpoint get the step details by the task id"
+					},
+					"response": [
+						{
+							"name": "Get step by task id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5520/tasks/2/steps",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5520",
+									"path": [
+										"tasks",
+										"2",
+										"steps"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Sep 2024 17:37:12 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "228"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"count\": 2,\n        \"steps\": [\n            {\n                \"id\": 1,\n                \"task_id\": 2,\n                \"step\": \"documents checking\",\n                \"completed\": false\n            },\n            {\n                \"id\": 2,\n                \"task_id\": 2,\n                \"step\": \"documents checking\",\n                \"completed\": false\n            }\n        ]\n    },\n    \"error\": null,\n    \"message\": \"Data requested is successfully fetched\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get single step",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tasks/2/steps/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tasks",
+								"2",
+								"steps",
+								"4"
+							]
+						},
+						"description": "This endpoint get the single step details by the task id"
+					},
+					"response": [
+						{
+							"name": "Get single step",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5520/tasks/2/steps/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5520",
+									"path": [
+										"tasks",
+										"2",
+										"steps",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Sep 2024 17:37:47 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "158"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"count\": 1,\n        \"step\": {\n            \"id\": 1,\n            \"task_id\": 2,\n            \"step\": \"documents checking\",\n            \"completed\": false\n        }\n    },\n    \"error\": null,\n    \"message\": \"Data requested is successfully fetched\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update step",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"completed\": true,\r\n    \"step\": \"documents checking again\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/tasks/2/steps/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tasks",
+								"2",
+								"steps",
+								"1"
+							]
+						},
+						"description": "update the step details like completed and step(description)"
+					},
+					"response": [
+						{
+							"name": "Update step",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"completed\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5520/tasks/1/steps/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5520",
+									"path": [
+										"tasks",
+										"1",
+										"steps",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Sep 2024 18:01:58 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"error\": null,\n    \"message\": \"Data successfully added \"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete step",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tasks/2/steps/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tasks",
+								"2",
+								"steps",
+								"2"
+							]
+						},
+						"description": "delete the step by task id and step id"
+					},
+					"response": [
+						{
+							"name": "Delete step",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5520/tasks/2/steps/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5520",
+									"path": [
+										"tasks",
+										"2",
+										"steps",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Sep 2024 17:39:31 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"error\": null,\n    \"message\": \"Data successfully deleted \"\n}"
+						}
+					]
+				}
+			],
+			"description": "This folder contains api's related to steps"
+		}
+	]
+}

@@ -25,6 +25,15 @@ func GetAllTask(ctx context.Context) ([]Task, int, error) {
 	return task, count, nil
 }
 
+func GetAllTaskByAuthorID(ctx context.Context, id int) ([]Task, int, error) {
+	var task []Task
+	count, err := dbconnections.MainDB.NewSelect().Model(&task).Where("author_id = ?", id).ScanAndCount(ctx)
+	if err != nil {
+		return nil, 0, err
+	}
+	return task, count, nil
+}
+
 func GetTask(ctx context.Context, id int) (*Task, error) {
 	task := new(Task)
 	err := dbconnections.MainDB.NewSelect().Model(task).Where("id = ?", id).Scan(ctx)
