@@ -20,7 +20,6 @@ type configApp struct {
 
 type configDatabase struct {
 	Database      string
-	First         bool
 	TablesCount   int
 	Tables        []string
 	Migration     string

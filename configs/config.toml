@@ -6,7 +6,6 @@ Environment     =   "local"
 
 [Database]
 Database    = "./databases/taskmanagement.db"
-First = true
 TablesCount = 3
 Tables = ["Authors", "Tasks", "Steps"]
 Migration = "./databases/create.sql"
