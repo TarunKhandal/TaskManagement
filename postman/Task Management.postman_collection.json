@@ -360,7 +360,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Book Publish\",\r\n    \"description\": \"Book publish task\",\r\n    \"author_id\": 1\r\n}",
+							"raw": "{\r\n    \"name\": \"Book Publish\",\r\n    \"description\": \"Book publish task\",\r\n    \"author_id\": 3\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -386,7 +386,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Tarun\",\r\n    \"decription\": \"khandal\",\r\n    \"author_id\": 1\r\n}",
+									"raw": "{\r\n    \"name\": \"Book Publish\",\r\n    \"description\": \"Book publish task\",\r\n    \"author_id\": 3\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -394,22 +394,17 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:5520/tasks",
-									"protocol": "http",
+									"raw": "{{base_url}}/tasks",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{base_url}}"
 									],
-									"port": "5520",
 									"path": [
 										"tasks"
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
+							"status": "Created",
+							"code": 201,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
@@ -418,15 +413,15 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 07 Sep 2024 16:56:07 GMT"
+									"value": "Tue, 10 Sep 2024 18:44:52 GMT"
 								},
 								{
 									"key": "Content-Length",
-									"value": "71"
+									"value": "72"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"taskId\": 1\n    },\n    \"error\": null,\n    \"message\": \"Data successfully added \"\n}"
+							"body": "{\n    \"data\": {\n        \"taskId\": 11\n    },\n    \"error\": null,\n    \"message\": \"Data successfully added \"\n}"
 						}
 					]
 				},
@@ -436,13 +431,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/tasks/1",
+							"raw": "{{base_url}}/tasks/4",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"tasks",
-								"1"
+								"4"
 							]
 						},
 						"description": "This endpoint get the task details by the task id"
@@ -454,18 +449,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://127.0.0.1:5520/tasks/1",
-									"protocol": "http",
+									"raw": "{{base_url}}/tasks/4",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{base_url}}"
 									],
-									"port": "5520",
 									"path": [
 										"tasks",
-										"1"
+										"4"
 									]
 								}
 							},
@@ -479,15 +469,15 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 07 Sep 2024 16:58:35 GMT"
+									"value": "Tue, 10 Sep 2024 18:42:17 GMT"
 								},
 								{
 									"key": "Content-Length",
-									"value": "134"
+									"value": "151"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Tarun\",\n        \"description\": \"khandal\",\n        \"author_id\": 1\n    },\n    \"error\": null,\n    \"message\": \"Data requested is successfully fetched\"\n}"
+							"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"Book Publish\",\n        \"description\": \"Book publish task\",\n        \"author_id\": 3\n    },\n    \"error\": null,\n    \"message\": \"Data requested is successfully fetched\"\n}"
 						}
 					]
 				},
@@ -802,15 +792,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:5520/tasks/1/steps",
-									"protocol": "http",
+									"raw": "{{base_url}}/tasks/1/steps",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{base_url}}"
 									],
-									"port": "5520",
 									"path": [
 										"tasks",
 										"1",
@@ -865,15 +850,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://127.0.0.1:5520/tasks/2/steps",
-									"protocol": "http",
+									"raw": "{{base_url}}/tasks/2/steps",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{base_url}}"
 									],
-									"port": "5520",
 									"path": [
 										"tasks",
 										"2",
@@ -929,15 +909,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://127.0.0.1:5520/tasks/2/steps/1",
-									"protocol": "http",
+									"raw": "{{base_url}}/tasks/2/steps/1",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{base_url}}"
 									],
-									"port": "5520",
 									"path": [
 										"tasks",
 										"2",
@@ -1012,15 +987,10 @@
 									}
 								},
 								"url": {
-									"raw": "http://127.0.0.1:5520/tasks/1/steps/1",
-									"protocol": "http",
+									"raw": "{{base_url}}/tasks/1/steps/1",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{base_url}}"
 									],
-									"port": "5520",
 									"path": [
 										"tasks",
 										"1",
@@ -1077,15 +1047,10 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://127.0.0.1:5520/tasks/2/steps/2",
-									"protocol": "http",
+									"raw": "{{base_url}}/tasks/2/steps/2",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{base_url}}"
 									],
-									"port": "5520",
 									"path": [
 										"tasks",
 										"2",
